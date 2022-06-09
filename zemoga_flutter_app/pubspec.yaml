@@ -14,6 +14,8 @@ dependencies:
   equatable: ^2.0.3
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   provider: ^6.0.3
   shared_preferences: ^2.0.15
 
@@ -24,3 +26,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+flutter_intl:
+  class_name: AppLocalizations
+  enabled: true
+  main_locale: en_US

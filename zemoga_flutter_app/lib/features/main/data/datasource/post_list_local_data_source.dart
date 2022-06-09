@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zemoga_flutter_app/core/error/exceptions.dart';
-import 'package:zemoga_flutter_app/features/posts_list/data/models/post_model.dart';
+import 'package:zemoga_flutter_app/features/main/data/models/post_model.dart';
 
 const cachedPostList = 'CACHED_POST_LIST';
 

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:zemoga_flutter_app/core/config/endpoints.dart';
 import 'package:zemoga_flutter_app/core/error/exceptions.dart';
-import 'package:zemoga_flutter_app/features/posts_list/data/models/post_model.dart';
+import 'package:zemoga_flutter_app/features/main/data/models/post_model.dart';
 
 abstract class PostListRemoteDataSource {
   Future<List<PostModel>>? getPostList();

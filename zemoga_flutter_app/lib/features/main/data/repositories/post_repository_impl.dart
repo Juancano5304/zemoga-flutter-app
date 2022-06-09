@@ -1,11 +1,11 @@
 import 'package:zemoga_flutter_app/core/connection/network_info.dart';
 import 'package:zemoga_flutter_app/core/error/exceptions.dart';
-import 'package:zemoga_flutter_app/features/posts_list/data/datasource/post_list_local_data_source.dart';
-import 'package:zemoga_flutter_app/features/posts_list/data/datasource/post_list_remote_datasource.dart';
-import 'package:zemoga_flutter_app/features/posts_list/domain/entities/post.dart';
+import 'package:zemoga_flutter_app/features/main/data/datasource/post_list_local_data_source.dart';
 import 'package:zemoga_flutter_app/core/error/failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:zemoga_flutter_app/features/posts_list/domain/repositories/post_repository.dart';
+import 'package:zemoga_flutter_app/features/main/data/datasource/post_list_remote_datasource.dart';
+import 'package:zemoga_flutter_app/features/main/domain/entities/post.dart';
+import 'package:zemoga_flutter_app/features/main/domain/repositories/post_repository.dart';
 
 class PostRepositoryImpl implements PostRepository {
   PostRepositoryImpl({

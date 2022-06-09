@@ -1,0 +1,12 @@
+{
+    "mainPageTitle": "Posts",
+    "allTab": "ALL",
+    "favoritesTab": "FAVORITES",
+    "descriptionTitle": "Description",
+    "userTitle": "User",
+    "userName": "Name",
+    "userEmail": "Email",
+    "userPhone": "Phone",
+    "userWebsite": "Website",
+    "CommentsTitle": "COMMENTS"
+}

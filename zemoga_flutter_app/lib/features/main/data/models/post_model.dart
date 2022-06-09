@@ -1,4 +1,6 @@
-import 'package:zemoga_flutter_app/features/posts_list/domain/entities/post.dart';
+// ignore_for_file: overridden_fields
+
+import 'package:zemoga_flutter_app/features/main/domain/entities/post.dart';
 
 class PostModel extends Post {
   const PostModel({
