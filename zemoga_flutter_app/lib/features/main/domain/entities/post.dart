@@ -2,43 +2,43 @@ import 'package:equatable/equatable.dart';
 
 class Post extends Equatable {
   const Post({
-    required this.userId,
+    required this.body,
     required this.id,
     required this.title,
-    required this.body,
+    required this.userId,
   });
 
-  final int userId;
+  final String body;
   final int id;
   final String title;
-  final String body;
+  final int userId;
 
   factory Post.fromJson(Map<String, dynamic> json) => Post(
-        userId: json[_AttributeKeys.userId],
+        body: json[_AttributeKeys.body],
         id: json[_AttributeKeys.id],
         title: json[_AttributeKeys.title],
-        body: json[_AttributeKeys.body],
+        userId: json[_AttributeKeys.userId],
       );
 
   Map<String, dynamic> toJson() => {
-        _AttributeKeys.userId: userId,
+        _AttributeKeys.body: body,
         _AttributeKeys.id: id,
         _AttributeKeys.title: title,
-        _AttributeKeys.body: body,
+        _AttributeKeys.userId: userId,
       };
 
   @override
   List<Object?> get props => [
-        userId,
+        body,
         id,
         title,
-        body,
+        userId,
       ];
 }
 
 abstract class _AttributeKeys {
+  static const body = 'body';
+  static const id = 'id';
+  static const title = 'title';
   static const userId = 'userId';
-  static const id = ' id';
-  static const title = ' title';
-  static const body = ' body';
 }

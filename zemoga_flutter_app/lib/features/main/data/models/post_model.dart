@@ -1,11 +1,12 @@
-// ignore_for_file: overridden_fields
+// ignore_for_file: overridden_fields, must_be_immutable, annotate_overrides
 
 import 'package:zemoga_flutter_app/features/main/domain/entities/post.dart';
 
 class PostModel extends Post {
-  const PostModel({
+  PostModel({
     required this.body,
     required this.id,
+    bool isFavorite = false,
     required this.title,
     required this.userId,
   }) : super(
@@ -19,6 +20,7 @@ class PostModel extends Post {
     return PostModel(
       body: json[_AttributeKeys.body],
       id: (json[_AttributeKeys.id] as num).toInt(),
+      isFavorite: json[_AttributeKeys.isFavorite] ?? false,
       title: json[_AttributeKeys.title],
       userId: (json[_AttributeKeys.userId] as num).toInt(),
     );
@@ -29,7 +31,8 @@ class PostModel extends Post {
     if (list != null) {
       result = [];
       for (dynamic json in list) {
-        result.add(PostModel.fromJson(json));
+        final postModel = PostModel.fromJson(json)..isFavorite = false;
+        result.add(postModel);
       }
     }
     return result;
@@ -40,27 +43,23 @@ class PostModel extends Post {
     return {
       _AttributeKeys.body: body,
       _AttributeKeys.id: id,
+      _AttributeKeys.isFavorite: isFavorite,
       _AttributeKeys.title: title,
       _AttributeKeys.userId: userId,
     };
   }
 
-  @override
   final int userId;
-
-  @override
   final int id;
-
-  @override
   final String title;
-
-  @override
   final String body;
+  bool? isFavorite;
 }
 
 abstract class _AttributeKeys {
-  static const body = ' body';
-  static const id = ' id';
-  static const title = ' title';
+  static const body = 'body';
+  static const id = 'id';
+  static const isFavorite = 'isFavorite';
+  static const title = 'title';
   static const userId = 'userId';
 }

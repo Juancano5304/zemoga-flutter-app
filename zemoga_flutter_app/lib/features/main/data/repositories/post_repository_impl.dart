@@ -4,7 +4,7 @@ import 'package:zemoga_flutter_app/features/main/data/datasource/post_list_local
 import 'package:zemoga_flutter_app/core/error/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:zemoga_flutter_app/features/main/data/datasource/post_list_remote_datasource.dart';
-import 'package:zemoga_flutter_app/features/main/domain/entities/post.dart';
+import 'package:zemoga_flutter_app/features/main/data/models/post_model.dart';
 import 'package:zemoga_flutter_app/features/main/domain/repositories/post_repository.dart';
 
 class PostRepositoryImpl implements PostRepository {
@@ -18,7 +18,11 @@ class PostRepositoryImpl implements PostRepository {
   final NetworkInfo networkInfo;
 
   @override
-  Future<Either<Failure, List<Post>?>?> getPostsList() async {
+  Future<Either<Failure, List<PostModel>?>?> getPostsList() async {
+    final posts = await localDataSource.getCachedPostList();
+    if (posts != null && posts.isNotEmpty) {
+      return Right(posts);
+    }
     if (await networkInfo.isConnected!) {
       try {
         final posts = await remoteDataSource.getPostList();
@@ -34,6 +38,16 @@ class PostRepositoryImpl implements PostRepository {
       } on CacheException {
         return Left(CacheFailure(errorMessage: 'Exception from Cache'));
       }
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> updateFavoritePost(PostModel post) async {
+    try {
+      final response = await localDataSource.updateFavoritePost(post);
+      return Right(response);
+    } on CacheException {
+      return Left(CacheFailure(errorMessage: 'Exception from Cache'));
     }
   }
 }

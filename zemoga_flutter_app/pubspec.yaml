@@ -26,6 +26,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/config/
 flutter_intl:
   class_name: AppLocalizations
   enabled: true

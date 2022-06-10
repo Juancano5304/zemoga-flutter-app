@@ -1,12 +1,13 @@
 {
-    "mainPageTitle": "Posts",
     "allTab": "ALL",
-    "favoritesTab": "FAVORITES",
+    "commentsTitle": "COMMENTS",
     "descriptionTitle": "Description",
-    "userTitle": "User",
-    "userName": "Name",
+    "favoritesEmptyState": "Añade favoritos para verlos aquí",
+    "favoritesTab": "FAVORITES",
+    "mainPageTitle": "Posts",
     "userEmail": "Email",
+    "userName": "Name",
     "userPhone": "Phone",
-    "userWebsite": "Website",
-    "CommentsTitle": "COMMENTS"
+    "userTitle": "User",
+    "userWebsite": "Website"
 }

@@ -9,6 +9,7 @@ const cachedPostList = 'CACHED_POST_LIST';
 abstract class PostListLocalDataSource {
   Future<void> cachePostList(List<PostModel>? modelToCache);
   Future<List<PostModel>?> getCachedPostList();
+  Future<bool> updateFavoritePost(PostModel post);
 }
 
 class PostListLocalDataSourceImpl implements PostListLocalDataSource {
@@ -34,10 +35,23 @@ class PostListLocalDataSourceImpl implements PostListLocalDataSource {
   Future<List<PostModel>?> getCachedPostList() async {
     final jsonString = _sharedPreferences.getString(cachedPostList);
     if (jsonString != null) {
-      Future.value(PostModel.fromJson(json.decode(jsonString)));
+      Future.value(PostModel.fromList(json.decode(jsonString)));
     } else {
       throw CacheException();
     }
     return null;
+  }
+
+  @override
+  Future<bool> updateFavoritePost(PostModel postModel) async {
+    final jsonString = _sharedPreferences.getString(cachedPostList);
+    if (jsonString != null) {
+      final postsList = PostModel.fromList(json.decode(jsonString))!;
+      postsList.singleWhere((element) => element == postModel).isFavorite =
+          postModel.isFavorite;
+      return Future.value(true);
+    } else {
+      throw CacheException();
+    }
   }
 }

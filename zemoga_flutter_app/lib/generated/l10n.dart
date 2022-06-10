@@ -50,16 +50,6 @@ class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  /// `Posts`
-  String get mainPageTitle {
-    return Intl.message(
-      'Posts',
-      name: 'mainPageTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `ALL`
   String get allTab {
     return Intl.message(
@@ -70,11 +60,11 @@ class AppLocalizations {
     );
   }
 
-  /// `FAVORITES`
-  String get favoritesTab {
+  /// `COMMENTS`
+  String get commentsTitle {
     return Intl.message(
-      'FAVORITES',
-      name: 'favoritesTab',
+      'COMMENTS',
+      name: 'commentsTitle',
       desc: '',
       args: [],
     );
@@ -90,21 +80,31 @@ class AppLocalizations {
     );
   }
 
-  /// `User`
-  String get userTitle {
+  /// `Añade favoritos para verlos aquí`
+  String get favoritesEmptyState {
     return Intl.message(
-      'User',
-      name: 'userTitle',
+      'Añade favoritos para verlos aquí',
+      name: 'favoritesEmptyState',
       desc: '',
       args: [],
     );
   }
 
-  /// `Name`
-  String get userName {
+  /// `FAVORITES`
+  String get favoritesTab {
     return Intl.message(
-      'Name',
-      name: 'userName',
+      'FAVORITES',
+      name: 'favoritesTab',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Posts`
+  String get mainPageTitle {
+    return Intl.message(
+      'Posts',
+      name: 'mainPageTitle',
       desc: '',
       args: [],
     );
@@ -120,6 +120,16 @@ class AppLocalizations {
     );
   }
 
+  /// `Name`
+  String get userName {
+    return Intl.message(
+      'Name',
+      name: 'userName',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Phone`
   String get userPhone {
     return Intl.message(
@@ -130,21 +140,21 @@ class AppLocalizations {
     );
   }
 
-  /// `Website`
-  String get userWebsite {
+  /// `User`
+  String get userTitle {
     return Intl.message(
-      'Website',
-      name: 'userWebsite',
+      'User',
+      name: 'userTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `COMMENTS`
-  String get CommentsTitle {
+  /// `Website`
+  String get userWebsite {
     return Intl.message(
-      'COMMENTS',
-      name: 'CommentsTitle',
+      'Website',
+      name: 'userWebsite',
       desc: '',
       args: [],
     );
