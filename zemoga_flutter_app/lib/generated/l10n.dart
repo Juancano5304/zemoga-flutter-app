@@ -110,6 +110,16 @@ class AppLocalizations {
     );
   }
 
+  /// `Undo`
+  String get undo {
+    return Intl.message(
+      'Undo',
+      name: 'undo',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Email`
   String get userEmail {
     return Intl.message(

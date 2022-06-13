@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Añade favoritos para verlos aquí"),
         "favoritesTab": MessageLookupByLibrary.simpleMessage("FAVORITES"),
         "mainPageTitle": MessageLookupByLibrary.simpleMessage("Posts"),
+        "undo": MessageLookupByLibrary.simpleMessage("Undo"),
         "userEmail": MessageLookupByLibrary.simpleMessage("Email"),
         "userName": MessageLookupByLibrary.simpleMessage("Name"),
         "userPhone": MessageLookupByLibrary.simpleMessage("Phone"),
