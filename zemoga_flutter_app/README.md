@@ -25,31 +25,30 @@
 
 ## About myself
 
-I'm a Flutter developer from Medellin, Colombia, with 30 years old i'm very entusiatic about the mobile development. With almost 6 years of mobile experience mostly in Android native Apps i decide this year to give a change to my career and introduce into the Flutter world and i'm really happy to be able to perform such a beautiful apps.
-I had worked on:
+I'm a 30 years old Flutter developer from the city of Medellín, Colombia; which is enthusiastic on current mobile development. With almost 6 years of mobile experience focused in Android native Apps, this year, I decided to give a chance to my career considering my professional knowledge into going deeper on Flutter world; such a goal makes me excited just about thinking how I'll perform what consider such beautiful apps to work with. So far, I've worked on:
 * Animations
 * Testing
 * MVVM
 * Clean Architecture
 * Provider
 * Routing
-* And a lot of libraries and dependencies as:
+* And a lot of libraries and dependencies such as:
   * Dio
   * Http
   * ImagePicker
 
 ## Architecture
 
-I decided to build this application on Clean Architecture only with the purpose that probe that i'm able to understand SOLID principles and this Bussiness orientated architecture.
+The only purpose what I develop this application on Clean Architecture is about to probe that i'm able to understand the SOLID principles, as well as this Bussiness orientated architecture
 
 ## State Managment
 
-I used Provider as state managment because is my strongest skill. Also i had been worked with MVVM architecture nevertheless i have the knowledge of cubit and bloc but never used before same as getx.
+I used Provider as state managment since it's my strongest skill. I've worked with MVVM architecture, nevertheless, I have knowledge on Cubit and Bloc which I've never used before as I do on Getx.
 
 ## Unit Testing
 
-I made some unit testing about models, repositories and datasources, including network verification and cache validation. Also have skills with widget and integration testing but is not included because of the limited time.
+I made some unit testing about models, repositories and datasources, including network verification and cache validation. My skills also outstand on widget and testing integration, however such skills are not included because there's not enough time to invest in currently.
 
 ## Thanks
 
-Thanks for the oportunity to give a chance un Zemoga
+Thanks for the oportunity to give a chance in Zemoga
