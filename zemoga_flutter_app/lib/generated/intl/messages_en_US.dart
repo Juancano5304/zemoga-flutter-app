@@ -27,8 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "deletedPostList":
             MessageLookupByLibrary.simpleMessage("Deleted post list"),
         "descriptionTitle": MessageLookupByLibrary.simpleMessage("Description"),
-        "favoritesEmptyState": MessageLookupByLibrary.simpleMessage(
-            "Añade favoritos para verlos aquí"),
+        "favoritesEmptyState":
+            MessageLookupByLibrary.simpleMessage("Had no favorites yet"),
         "favoritesTab": MessageLookupByLibrary.simpleMessage("FAVORITES"),
         "mainPageTitle": MessageLookupByLibrary.simpleMessage("Posts"),
         "notAvailablePost":

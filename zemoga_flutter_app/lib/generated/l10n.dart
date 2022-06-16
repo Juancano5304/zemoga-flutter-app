@@ -90,10 +90,10 @@ class AppLocalizations {
     );
   }
 
-  /// `Añade favoritos para verlos aquí`
+  /// `Had no favorites yet`
   String get favoritesEmptyState {
     return Intl.message(
-      'Añade favoritos para verlos aquí',
+      'Had no favorites yet',
       name: 'favoritesEmptyState',
       desc: '',
       args: [],
