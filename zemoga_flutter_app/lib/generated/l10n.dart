@@ -80,6 +80,16 @@ class AppLocalizations {
     );
   }
 
+  /// `Deleted post list`
+  String get deletedPostList {
+    return Intl.message(
+      'Deleted post list',
+      name: 'deletedPostList',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Añade favoritos para verlos aquí`
   String get favoritesEmptyState {
     return Intl.message(
@@ -105,6 +115,26 @@ class AppLocalizations {
     return Intl.message(
       'Posts',
       name: 'mainPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There is no post saved`
+  String get notAvailablePost {
+    return Intl.message(
+      'There is no post saved',
+      name: 'notAvailablePost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Press action icon to reload`
+  String get pressToReload {
+    return Intl.message(
+      'Press action icon to reload',
+      name: 'pressToReload',
       desc: '',
       args: [],
     );

@@ -116,11 +116,27 @@ class _PostListPageState extends State<PostListPage>
       );
     }
 
-    return const Expanded(
+    return Expanded(
       child: Center(
-        child: CircularProgressIndicator(
-          backgroundColor: Colors.white,
-          color: Colors.green,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              localizations.notAvailablePost,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 50.0,
+            ),
+            Text(localizations.pressToReload),
+            const SizedBox(
+              height: 50.0,
+            ),
+            const CircularProgressIndicator(
+              backgroundColor: Colors.white,
+              color: Colors.green,
+            ),
+          ],
         ),
       ),
     );

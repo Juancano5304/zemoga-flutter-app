@@ -48,7 +48,7 @@ class PostListProvider extends ChangeNotifier {
     final failureOrPostList = await repositoryImpl.getPostsList();
 
     if (failureOrPostList == null) {
-      failure = ServerFailure(errorMessage: 'Empty Post List');
+      failure = const ServerFailure(errorMessage: 'Empty Post List');
       return;
     }
 
@@ -61,6 +61,44 @@ class PostListProvider extends ChangeNotifier {
       (newPostList) {
         postsList = newPostList;
         failure = null;
+        notifyListeners();
+      },
+    );
+  }
+
+  Future<void> deletePostList() async {
+    final configJson = Endpoints.fromJson(
+      json.decode(
+        (await rootBundle.loadString(
+          endpointsAssetsPath,
+        )),
+      ),
+    ).posts;
+
+    PostRepositoryImpl repositoryImpl = PostRepositoryImpl(
+      remoteDataSource: PostListRemoteDataSourceImpl(
+        dio: Dio(),
+        endpoint: configJson,
+      ),
+      localDataSource: PostListLocalDataSourceImpl(
+        sharedPreferences: await SharedPreferences.getInstance(),
+      ),
+      networkInfo: NetworkInfoImpl(
+        DataConnectionChecker(),
+      ),
+    );
+
+    final failureOrSuccessDelete = await repositoryImpl.deletePostList();
+
+    failureOrSuccessDelete.fold(
+      (newFailure) {
+        postsList = null;
+        failure = newFailure;
+        notifyListeners();
+      },
+      (_) {
+        failure = null;
+        postsList = null;
         notifyListeners();
       },
     );

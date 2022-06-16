@@ -35,7 +35,10 @@ class _MainPageState extends State<MainPage> {
         appBar: AppBar(
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Provider.of<PostListProvider>(context, listen: false)
+                    .eitherFailureOrPostList();
+              },
               icon: const Icon(
                 Icons.replay,
                 color: Colors.white,
@@ -63,6 +66,21 @@ class _MainPageState extends State<MainPage> {
             PostListPage(),
             FavoritesListPage(),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.delete),
+          onPressed: () async =>
+              Provider.of<PostListProvider>(context, listen: false)
+                  .deletePostList()
+                  .then(
+                    (value) => ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          localizations.deletedPostList,
+                        ),
+                      ),
+                    ),
+                  ),
         ),
       ),
     );

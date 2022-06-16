@@ -24,11 +24,17 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "allTab": MessageLookupByLibrary.simpleMessage("ALL"),
         "commentsTitle": MessageLookupByLibrary.simpleMessage("COMMENTS"),
+        "deletedPostList":
+            MessageLookupByLibrary.simpleMessage("Deleted post list"),
         "descriptionTitle": MessageLookupByLibrary.simpleMessage("Description"),
         "favoritesEmptyState": MessageLookupByLibrary.simpleMessage(
             "Añade favoritos para verlos aquí"),
         "favoritesTab": MessageLookupByLibrary.simpleMessage("FAVORITES"),
         "mainPageTitle": MessageLookupByLibrary.simpleMessage("Posts"),
+        "notAvailablePost":
+            MessageLookupByLibrary.simpleMessage("There is no post saved"),
+        "pressToReload":
+            MessageLookupByLibrary.simpleMessage("Press action icon to reload"),
         "undo": MessageLookupByLibrary.simpleMessage("Undo"),
         "user": MessageLookupByLibrary.simpleMessage("User"),
         "userEmail": MessageLookupByLibrary.simpleMessage("Email"),

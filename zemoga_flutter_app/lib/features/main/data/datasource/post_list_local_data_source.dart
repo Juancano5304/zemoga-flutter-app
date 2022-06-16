@@ -8,6 +8,7 @@ const cachedPostList = 'CACHED_POST_LIST';
 
 abstract class PostListLocalDataSource {
   Future<void> cachePostList(List<PostModel>? modelToCache);
+  Future<void> deletePostList();
   Future<List<PostModel>?> getCachedPostList();
   Future<bool> updateFavoritePost(PostModel post);
 }
@@ -28,6 +29,14 @@ class PostListLocalDataSourceImpl implements PostListLocalDataSource {
       );
     } else {
       throw CacheException();
+    }
+  }
+
+  @override
+  Future<void> deletePostList() async {
+    final jsonString = _sharedPreferences.getString(cachedPostList);
+    if (jsonString != null) {
+      _sharedPreferences.remove(cachedPostList);
     }
   }
 

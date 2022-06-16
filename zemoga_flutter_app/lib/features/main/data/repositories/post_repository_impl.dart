@@ -17,6 +17,21 @@ class PostRepositoryImpl implements PostRepository {
   final PostListLocalDataSource localDataSource;
   final NetworkInfo networkInfo;
 
+  Future<Either<Failure, bool>> deletePostList() async {
+    try {
+      final cachedPostList = await localDataSource.getCachedPostList();
+      if (cachedPostList == null || cachedPostList.isEmpty) {
+        return const Right(true);
+      } else {
+        localDataSource.deletePostList();
+        return const Right(true);
+      }
+    } catch (e) {
+      return const Left(
+          CacheFailure(errorMessage: 'Error deleting cache data'));
+    }
+  }
+
   @override
   Future<Either<Failure, List<PostModel>?>?> getPostsList() async {
     if (await networkInfo.isConnected!) {
@@ -25,14 +40,14 @@ class PostRepositoryImpl implements PostRepository {
         localDataSource.cachePostList(posts);
         return Right(posts);
       } on ServerException {
-        return Left(ServerFailure(errorMessage: 'Exception from Server'));
+        return const Left(ServerFailure(errorMessage: 'Exception from Server'));
       }
     } else {
       try {
         final posts = await localDataSource.getCachedPostList();
         return Right(posts);
       } on CacheException {
-        return Left(CacheFailure(errorMessage: 'Exception from Cache'));
+        return const Left(CacheFailure(errorMessage: 'Exception from Cache'));
       }
     }
   }
@@ -43,7 +58,7 @@ class PostRepositoryImpl implements PostRepository {
       final response = await localDataSource.updateFavoritePost(post);
       return Right(response);
     } on CacheException {
-      return Left(CacheFailure(errorMessage: 'Exception from Cache'));
+      return const Left(CacheFailure(errorMessage: 'Exception from Cache'));
     }
   }
 }

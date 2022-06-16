@@ -19,6 +19,7 @@
 - [Table of contents](#table-of-contents)
 - [About myself](#about-myself)
 - [Architecture](#architecture)
+- [Some features about the app](#some-features-about-the-app)
 - [State Managment](#state-managment)
 - [Unit Testing](#unit-testing)
 - [Thanks](#thanks)
@@ -40,6 +41,13 @@ I'm a 30 years old Flutter developer from the city of Medellín, Colombia; which
 ## Architecture
 
 The only purpose what I develop this application on Clean Architecture is about to probe that i'm able to understand the SOLID principles, as well as this Bussiness orientated architecture
+
+## Some features about the app
+
+* The app is able to load post list from chache or from network source.
+* The post list could be reloaded with dragging down the list
+* The post could be deleted with a swipe
+* To add to favorites press the star to the right side
 
 ## State Managment
 
