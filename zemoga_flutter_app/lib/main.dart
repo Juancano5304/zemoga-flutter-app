@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:zemoga_flutter_app/core/navigation/app_router.dart';
+import 'package:zemoga_flutter_app/features/details/display/provider/details_provider.dart';
 import 'package:zemoga_flutter_app/features/main/display/pages/main_page.dart';
 import 'package:zemoga_flutter_app/features/main/display/provider/post_list_provider.dart';
 import 'package:zemoga_flutter_app/generated/l10n.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => PostListProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => DetailsProvider(),
         ),
 
         // ChangeNotifierProvider(create: ((context) => PostDetailProvider(),),

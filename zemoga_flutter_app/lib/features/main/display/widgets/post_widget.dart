@@ -22,13 +22,20 @@ class _PostWidgetState extends State<PostWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (() => Navigator.of(context).pushNamed(NamedRoutes.details)),
+      onTap: () => Navigator.of(context).pushNamed(
+        NamedRoutes.details,
+        arguments: {
+          'body': widget.post.body,
+          'id': widget.post.userId,
+          'postId': widget.post.id,
+        },
+      ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
             Expanded(
-              child: Text(widget.post.body),
+              child: Text(widget.post.title),
             ),
             InkWell(
               onTap: (() async {

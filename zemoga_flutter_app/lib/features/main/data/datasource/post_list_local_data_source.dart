@@ -35,11 +35,10 @@ class PostListLocalDataSourceImpl implements PostListLocalDataSource {
   Future<List<PostModel>?> getCachedPostList() async {
     final jsonString = _sharedPreferences.getString(cachedPostList);
     if (jsonString != null) {
-      Future.value(PostModel.fromList(json.decode(jsonString)));
+      return Future.value(PostModel.fromList(json.decode(jsonString)));
     } else {
       throw CacheException();
     }
-    return null;
   }
 
   @override

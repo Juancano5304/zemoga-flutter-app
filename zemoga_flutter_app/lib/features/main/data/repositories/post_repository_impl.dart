@@ -19,10 +19,6 @@ class PostRepositoryImpl implements PostRepository {
 
   @override
   Future<Either<Failure, List<PostModel>?>?> getPostsList() async {
-    final posts = await localDataSource.getCachedPostList();
-    if (posts != null && posts.isNotEmpty) {
-      return Right(posts);
-    }
     if (await networkInfo.isConnected!) {
       try {
         final posts = await remoteDataSource.getPostList();

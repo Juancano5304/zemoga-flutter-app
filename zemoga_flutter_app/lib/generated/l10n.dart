@@ -120,6 +120,16 @@ class AppLocalizations {
     );
   }
 
+  /// `User`
+  String get user {
+    return Intl.message(
+      'User',
+      name: 'user',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Email`
   String get userEmail {
     return Intl.message(
